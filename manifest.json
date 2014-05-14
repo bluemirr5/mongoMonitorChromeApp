@@ -1,0 +1,14 @@
+{
+  "name": "MongoMonitor",
+  "description": "MongoDB Monitoring Chrome App",
+  "version": "0.2",
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "icons": { "16": "mongo-db-16.png", "32": "mongo-db-32.png", "128": "mongo-db-128.png" },
+  "permissions":[
+    "http://*/*"
+  ]
+}

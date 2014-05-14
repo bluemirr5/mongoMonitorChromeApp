@@ -1,0 +1,58 @@
+<html ng-app="mongoMonitorApp">
+<head>
+	<script src="/js/lib/angular.min.js"></script>
+	<script src="/js/src/app.js"></script>
+	<script src="/js/src/controllers.js"></script>
+	<script src="/js/src/services.js"></script>
+</head>
+<body>
+<h2><img src="/mongo-db-32.png" >MongoDB Monitoring Tool</h2>
+<hr>
+<div ng-controller="RootCtrl">
+	<div>
+		<h4>Server Info</h4>
+		<hr>
+		Host : {{vo.host}}<br />
+		Version : {{vo.version}} <br />
+		Active Time : {{vo.uptime | number}} (Sec)
+	</div>
+	<div>
+		<h4>Memory Info</h4>
+		<hr>
+		Ram Use : {{vo.ram}} (MB)<br />
+		Virtual User : {{vo.virtual}} (MB) <br />
+	</div>
+	<div>
+		<h4>Disk Access Info</h4>
+		<hr>
+		Save Data Count(mem =) Disk) : {{vo.dataFlushCount}}<br />
+		Save Data Time(Total/Avr) :  {{vo.dataFlushTotalTime / 1000 | number:2}}(Sec) / {{vo.dataFlushAvrTime | number:2}} (milliSec)<br />
+		Page Fault Count : {{vo.pageFaults}} <br />
+		Access Disk : {{vo.accessesNotInMemory}} <br /> 
+		Page Fault Exception : {{vo.pageFaultExceptionsThrown}}
+	</div>
+	<div>
+		<h4>Network Info</h4>
+		<hr>
+		Connection(cur/avail) : {{vo.currentConnection}} / {{vo.availableConnection}}<br />
+		input traffic : {{vo.networkInByte}} (byte)<br />
+		output traffic : {{vo.networkOutByte}} (byte)
+	</div>
+	<div>
+		<h4>Server Lock Info</h4>
+		<hr>
+		DB Lock Time(read/write) : {{vo.readLockedTime/1000000 | number:2}} / {{vo.writeLockedTime/1000000 | number:2}} (Sec)<br />
+		DB Operation Time(read/write) : {{vo.readSpendTime/1000000 | number:2}} / {{vo.writeSpendTime/1000000 | number:2}}(Sec)<br />
+		Lock Queue Count(total/read/write) : {{vo.totalQueue}} / {{vo.readersQueue}} / {{vo.writersQueue}}
+	</div>
+	<div>
+		<h4>Operation Info</h4>
+		<hr>
+		Insert : {{vo.opInsert}}<br />
+		Query : {{vo.opQuery}}<br />
+		Update : {{vo.opUpdate}}<br />
+		Delete : {{vo.opDelete}}
+	</div>
+</div>
+</body>
+</html>
