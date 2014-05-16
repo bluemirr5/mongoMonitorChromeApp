@@ -10,7 +10,7 @@ angular.module('mongoMonitorApp.services', []).
 		var serviceObj = {
 			url : 'http://182.162.84.136:28017/serverStatus',
 			userId : 'admin',
-			password : 'promptwow123',
+			password : 'aaaaaaa',
 			getStatus : function(success, fail) {
 				var userId = this.userId;
 				var url = this.url;
