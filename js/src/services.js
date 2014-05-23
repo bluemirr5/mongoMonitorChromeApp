@@ -8,7 +8,7 @@
 angular.module('mongoMonitorApp.services', []).
 	factory('serverStatus', function(){
 		var serviceObj = {
-			url : 'http://182.162.84.136:28017/serverStatus',
+			url : 'http://xxx.xxx.xx.xxx:28017/serverStatus',
 			userId : 'admin',
 			password : 'aaaaaaa',
 			getStatus : function(success, fail) {
